@@ -6,6 +6,7 @@ terraform {
       version = "~> 3.0.2"
     }
   }
+ # Backend configuration for storing the Terraform state file in Azure Blob Storage
   backend "azurerm" {
     resource_group_name  = "terraformstaterg01"
     storage_account_name = "terrafromstatestorage"
@@ -14,8 +15,7 @@ terraform {
   }
   #Required version of Terraform to use, recommendation it above this version
   required_version = ">= 1.1.0"
-
-
+  
 }
 #Specific to Azure provider.
 provider "azurerm" {
