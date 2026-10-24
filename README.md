@@ -72,7 +72,7 @@ This is one of the advantages of using a backend Statefile. It means that the St
 
 ## Conclusion
 As per the initial requirements all parts have been configured. However there some things to consider changing or improving.
--   Method of storing Storage account access key - Storing the credential in Jenkins is fine for this project, however as Jenkins instances grow a better solution would be to store in an Azure Keyvault. The benefit of this would be security, a compromised key would need to be rotated, meaning the need to replace it in each instance. If instead, I was were referencing a Keyvault, I can just change the single secret within the Keyvault.
+-   Method of storing Storage account access key - Storing the key in Jenkins is fine for this project, however as Jenkins instances grow a better solution would be to store in an Azure Keyvault. The benefit of this would be security, a compromised key would need to be rotated, meaning the need to replace it in each instance. If instead, I was  referencing a Keyvault, I can just change the single secret within the Keyvault.
 -   Triggering resource creation - Manually triggering a build each time in Jenkins can be a little tedious, it would be better to implement a webhook that triggers a build each time a change is made to the main.tf. 
--   General complexity of the Terraform files and resources is quite low, this will be increased with each additional project
--   The same "Groovy String interpolation" warning is appearing as in my last project, so this should be reviewed one.
+-   General complexity of the Terraform files and resources is quite low, this will be increased with each additional project.
+-   The same "Groovy String interpolation" warning is appearing as in my last project, so I will review this moving forward.
