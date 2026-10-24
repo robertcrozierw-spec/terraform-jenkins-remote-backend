@@ -11,4 +11,17 @@ Once this remote backend is completed I will create additional resources to demo
 ## Prerequisites
 
 - Existing Jenkins pipeline configured to use included Jenkinsfile.
-- Storage account manually created in Azure to store backend Statefile.
+- Access key of Storage account with container manually created in Azure to store backend Statefile.
+
+## Procedure
+
+First, I will add the backend section in the main.tf, this is referencing my pre-configured storage accounts details:
+```
+ backend "azurerm" {
+    resource_group_name  = "terraformstaterg01"
+    storage_account_name = "terrafromstatestorage"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate" #This is the name of the actual Statefile, not the access key
+  }
+```
+

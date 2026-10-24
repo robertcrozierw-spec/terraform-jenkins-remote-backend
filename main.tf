@@ -6,8 +6,16 @@ terraform {
       version = "~> 3.0.2"
     }
   }
-
+  backend "azurerm" {
+    resource_group_name  = "terraformstaterg01"
+    storage_account_name = "terrafromstatestorage"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate" #This is the name of the actual Statefile, not the access key
+  }
+  #Required version of Terraform to use, recommendation it above this version
   required_version = ">= 1.1.0"
+
+
 }
 #Specific to Azure provider.
 provider "azurerm" {
