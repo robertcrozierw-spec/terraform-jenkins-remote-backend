@@ -17,7 +17,7 @@ pipeline {
             steps {
                 git branch: 'main', 
                 credentialsId: 'JenkinsSSH', 
-                url: 'git@github.com:robertcrozierw-spec/terraform-jenkins-rg-creation.git'
+                url: 'git@github.com:robertcrozierw-spec/terraform-jenkins-remote-backend.git'
             }
         }
         //Run terraform init to initialize the Terraform working directory.
