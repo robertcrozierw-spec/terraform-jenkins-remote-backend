@@ -25,3 +25,8 @@ First, I will add the backend section in the main.tf, this is referencing my pre
   }
 ```
 
+Using the Access Key copied from the created Storage account, I added a credential into my Jenkins instance.
+I can then reference and assign to the required variable using the newly added:
+```
+ ARM_ACCESS_KEY = credentials('terraform-jenkins-remote-backend-key')
+```
