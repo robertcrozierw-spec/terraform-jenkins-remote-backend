@@ -15,7 +15,7 @@ terraform {
   }
   #Required version of Terraform to use, recommendation it above this version
   required_version = ">= 1.1.0"
-  
+
 }
 #Specific to Azure provider.
 provider "azurerm" {
@@ -25,6 +25,14 @@ provider "azurerm" {
 #Create resource group. Within Terraform the name is BobsWorld and also in Azure
 resource "azurerm_resource_group" "BobsWorld" {
   name     = "BobsWorld"
+  location = "eastus2"
+
+  tags = {
+    owner = "JenkinsPipeline"
+  }
+}
+resource "azurerm_resource_group" "BobsWorld2" {
+  name     = "BobsWorld2"
   location = "eastus2"
 
   tags = {
